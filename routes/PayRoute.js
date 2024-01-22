@@ -8,8 +8,6 @@ const stripe = require("stripe").Stripe(
 const PayRoute = Router()
 
 PayRoute.post("/payments", async(req, res) => {
-    console.log(req.body);
-    console.log('hited pay')
       const line_items = req.body.cartItems.map((item) => {
     return {
       price_data: {
